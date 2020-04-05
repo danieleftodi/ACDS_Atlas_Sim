@@ -11,6 +11,9 @@ Categories
     Grouped by age.
     Grouped by gender.
 """
+
+import pandas as pd
+
 publisher = "The Public Health Agency of Sweden"
 
 # Datasets on the spread of COVID-19 from The Public Health Agency of Sweden.
@@ -22,3 +25,7 @@ files = {
     'deceased':
         'https://www.the-data-smorgasbord.com/outbreak/swe-public-health-agency/deceased_time_series.csv',
 }
+
+def get(files=files):
+    for set, uri in files.items():
+        yield set, pd.read_csv(uri)
