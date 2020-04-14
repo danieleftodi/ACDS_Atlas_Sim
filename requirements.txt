@@ -10,6 +10,10 @@ pycairo==1.17.1; sys_platform == 'linux'
 pycairo>=1.18.1; sys_platform == 'win32'
 pydub==0.23.0
 pyreadline==2.1; sys_platform == 'win32'
+# pycairo setup is a bit flaky, workarounds:
+# https://github.com/pygobject/pycairo/issues/60: sudo apt install pkg-config
+# https://github.com/pygobject/pycairo/issues/39: sudo apt install python-dev libcairo2-dev libjpeg-dev libgif-dev
+pycairo
 pandas
 xlrd
 json2xml
